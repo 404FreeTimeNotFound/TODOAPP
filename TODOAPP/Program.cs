@@ -1,15 +1,21 @@
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using TODOAPP.Controllers.Data;
 using FluentValidation;
 using FluentValidation.AspNetCore;
-
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using TODOAPP.Configurations;
+using TODOAPP.Data.Services;
+using TODOAPP.Validators;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IJwtGenerator,JwtGenerator>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -20,6 +26,36 @@ builder.Services.AddDbContext<ApiDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
+// Configure Identity
+builder.Services.AddIdentity<IdentityUser,IdentityRole>(options=>options.SignIn.RequireConfirmedAccount=true)
+    .AddEntityFrameworkStores<ApiDbContext>()
+    .AddDefaultTokenProviders();
+
+// Configure JWT Authentication
+builder.Services.Configure<JwtConfig>(builder.Configuration.GetSection("JwtConfig"));
+
+var key = System.Text.Encoding.ASCII.GetBytes(builder.Configuration["JwtConfig:Secret"]!);
+var tokenValidationParam = new TokenValidationParameters
+{
+	ValidateIssuerSigningKey = true,
+	IssuerSigningKey = new SymmetricSecurityKey(key),
+	ValidateIssuer = false,
+	ValidateAudience = false,
+	ValidateLifetime = true,
+	RequireExpirationTime = false
+};
+builder.Services.AddSingleton(tokenValidationParam);// used for refresh token as dependancy injectij
+
+builder.Services.AddAuthentication(option =>
+{
+	option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+	option.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+	option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(jwt =>
+{
+	jwt.SaveToken = true;
+	jwt.TokenValidationParameters = tokenValidationParam;
+});
 
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();

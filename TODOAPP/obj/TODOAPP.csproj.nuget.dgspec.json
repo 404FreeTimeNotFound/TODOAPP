@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Revesion\\Projects\\TODOAPP\\TODOAPP.csproj": {}
+    "D:\\WorkArea\\Sharawy\\GitHubArea\\TODOAPP\\TODOAPP\\TODOAPP.csproj": {}
   },
   "projects": {
-    "G:\\Revesion\\Projects\\TODOAPP\\TODOAPP.csproj": {
+    "D:\\WorkArea\\Sharawy\\GitHubArea\\TODOAPP\\TODOAPP\\TODOAPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Revesion\\Projects\\TODOAPP\\TODOAPP.csproj",
+        "projectUniqueName": "D:\\WorkArea\\Sharawy\\GitHubArea\\TODOAPP\\TODOAPP\\TODOAPP.csproj",
         "projectName": "TODOAPP",
-        "projectPath": "G:\\Revesion\\Projects\\TODOAPP\\TODOAPP.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "G:\\Revesion\\Projects\\TODOAPP\\obj\\",
+        "projectPath": "D:\\WorkArea\\Sharawy\\GitHubArea\\TODOAPP\\TODOAPP\\TODOAPP.csproj",
+        "packagesPath": "C:\\Users\\markaz 2\\.nuget\\packages\\",
+        "outputPath": "D:\\WorkArea\\Sharawy\\GitHubArea\\TODOAPP\\TODOAPP\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\markaz 2\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -62,29 +55,37 @@
               "target": "Package",
               "version": "[12.1.1, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.22, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.22, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.22, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[8.0.22, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[8.0.22, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[8.0.22, )"
             },
             "Microsoft.EntityFrameworkCore.tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[8.0.22, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -110,7 +111,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
