@@ -13,6 +13,7 @@
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.22",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.22",
+          "Microsoft.AspNetCore.Mvc.Versioning": "5.1.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.22",
           "Microsoft.EntityFrameworkCore": "8.0.22",
           "Microsoft.EntityFrameworkCore.Design": "8.0.22",
@@ -138,6 +139,14 @@
           "lib/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
             "assemblyVersion": "8.0.22.0",
             "fileVersion": "8.0.2225.52808"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Versioning/5.1.0": {
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Mvc.Versioning.dll": {
+            "assemblyVersion": "5.1.0.0",
+            "fileVersion": "5.1.8270.41513"
           }
         }
       },
@@ -1120,6 +1129,13 @@
       "sha512": "sha512-8yF4+w8yEc9ba/GPeOkOENqr5OwN/6IzWIYg52YntzHTpsy65cnvav34cfYCHcIEON9moa19Sj65q2GKi1JYXg==",
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/8.0.22",
       "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.8.0.22.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Versioning/5.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UX8w9BlCiZpr6Ox4YAve1w0CkI1CAovukGNzKd7v0+5pZc8lzuG5tRovucr1RWIKHs0E/Yx8563CN7KzaB3bpw==",
+      "path": "microsoft.aspnetcore.mvc.versioning/5.1.0",
+      "hashPath": "microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OpenApi/8.0.22": {
       "type": "package",

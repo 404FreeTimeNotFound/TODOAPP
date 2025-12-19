@@ -9,12 +9,19 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using TODOAPP.Configurations;
 using TODOAPP.Data.Services;
 using TODOAPP.Validators;
+using Microsoft.AspNetCore.Mvc;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IJwtGenerator,JwtGenerator>();
+builder.Services.AddApiVersioning(options =>
+{
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.DefaultApiVersion = new ApiVersion(1, 1);
+    options.ReportApiVersions = true;
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

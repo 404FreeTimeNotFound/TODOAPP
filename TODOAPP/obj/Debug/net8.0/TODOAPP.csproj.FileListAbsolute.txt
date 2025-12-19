@@ -298,3 +298,4 @@ D:\WorkArea\Sharawy\GitHubArea\TODOAPP\TODOAPP\obj\Debug\net8.0\TODOAPP.pdb
 D:\WorkArea\Sharawy\GitHubArea\TODOAPP\TODOAPP\obj\Debug\net8.0\TODOAPP.genruntimeconfig.cache
 D:\WorkArea\Sharawy\GitHubArea\TODOAPP\TODOAPP\obj\Debug\net8.0\ref\TODOAPP.dll
 D:\WorkArea\Sharawy\GitHubArea\TODOAPP\TODOAPP\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\WorkArea\Sharawy\GitHubArea\TODOAPP\TODOAPP\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Versioning.dll

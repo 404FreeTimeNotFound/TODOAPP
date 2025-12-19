@@ -9,11 +9,12 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using TODOAPP.Controllers.Data;
 using TODOAPP.Models;
 
-namespace TODOAPP.Controllers
+namespace TODOAPP.Controllers.V1_0
 {
     [Authorize]
+    [ApiVersion("1.0")]
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class TODOController : ControllerBase
     {
         private readonly ApiDbContext _context;

@@ -12,10 +12,11 @@ using TODOAPP.Data.Services;
 using TODOAPP.Models.DTOs.Requests;
 using TODOAPP.Models.DTOs.Responses;
 
-namespace TODOAPP.Controllers
+namespace TODOAPP.Controllers.V1_0
 {
+	[ApiVersion("1.0")]
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class AuthManagmentController:ControllerBase
     {
         private readonly IJwtGenerator _jwtGenerator;
