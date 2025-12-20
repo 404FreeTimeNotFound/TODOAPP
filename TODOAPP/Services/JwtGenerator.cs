@@ -16,7 +16,7 @@ using TODOAPP.Data.Services;
 using TODOAPP.Models;
 using TODOAPP.Models.DTOs.Responses;
 
-namespace TODOAPP.Validators
+namespace TODOAPP.Repositories
 {
     public  class JwtGenerator:IJwtGenerator
     {
@@ -36,8 +36,8 @@ namespace TODOAPP.Validators
                 Subject=new ClaimsIdentity(new[]
                 {
                     new Claim("Id",user.Id),
-                    new Claim(JwtRegisteredClaimNames.Sub,user.Email),
-                    new Claim(JwtRegisteredClaimNames.Email,user.Email),
+                    new Claim(JwtRegisteredClaimNames.Sub,user.Email!),
+                    new Claim(JwtRegisteredClaimNames.Email,user.Email!),
                     new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
                 }),
                 Expires=DateTime.UtcNow.AddSeconds(_jwtConfig.ExpiryDuration),
