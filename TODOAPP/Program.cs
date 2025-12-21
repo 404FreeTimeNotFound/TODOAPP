@@ -12,14 +12,14 @@ using Microsoft.AspNetCore.Mvc;
 using TODOAPP.Repositories;
 using TODOAPP.Domain.Interfaces.IRepositories;
 using TODOAPP.Domain.Data;
+using TODOAPP.ExtentionMethods;
+using TODOAPP.Utilies;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddScoped<IJwtGenerator,JwtGenerator>();
-builder.Services.AddScoped<IItemService, ItemService>();
-builder.Services.AddScoped<IItemRepository, ItemRepository>();
+builder.Services.AddServicesAsync().Wait();
 
 builder.Services.AddApiVersioning(options =>
 {
@@ -86,7 +86,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
 app.MapControllers();
+app.AddCorrelationIdMiddlewareAsync().Wait();
+
+
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
